@@ -10,7 +10,7 @@ window.location.href="home.html";
 
 else{
 
-document.getElementById("wrong").innerHTML="❌ Wrong Password";
+document.getElementById("wrong").innerHTML="❌ Wrong Password Thiss Worldd Is Only For My Nidhimaaa";
 
 }
 
