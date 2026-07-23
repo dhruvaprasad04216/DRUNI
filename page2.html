@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome My Nidhima ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="page2">
+
+<div class="welcome-page">
+
+<h1>Welcome, My LOVELY Muduu Bangara ❤️</h1>
+
+<p id="typing"></p>
+
+<a href="page3.html" id="nextBtn">
+Continue ❤️ 
+</a>
+
+</div>
+
+
+<audio id="bgMusic" loop>
+    <source src="space.mp3" type="audio/mpeg">
+</audio>
+
+
+<script>
+
+const text = `If you're reading this...
+
+You've just stepped into a little universe
+that I created only for you.
+Every star in this sky reminds me
+of a beautiful memory we've shared.
+Today isn't just your birthday...
+It's the day someone truly special
+came into this world.
+So take my hand...
+Let's walk through our beautiful journey together. ❤️`;
+
+
+let i = 0;
+
+
+function typeWriter(){
+
+const typingElement = document.getElementById("typing");
+
+
+if(i < text.length){
+
+typingElement.innerHTML =
+text.substring(0,i+1) +
+'<span class="cursor">|</span>';
+
+i++;
+
+setTimeout(typeWriter,45);
+
+}
+
+else{
+
+typingElement.innerHTML=text;
+
+document.getElementById("nextBtn").style.opacity="1";
+
+}
+
+}
+
+
+
+window.onload=function(){
+
+const music=document.getElementById("bgMusic");
+
+music.volume=0.25;
+
+music.play().catch(()=>{});
+
+typeWriter();
+
+}
+
+
+
+document.getElementById("nextBtn").onclick=function(){
+
+sessionStorage.setItem("page3music","yes");
+
+};
+
+
+
+</script>
+
+
+</body>
+</html>

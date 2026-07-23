@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Beautiful Memories ❤️</title>
+
+<link rel="stylesheet" href="page4.css">
+
+</head>
+
+<body>
+
+<div class="sky"></div>
+
+<div class="stars"></div>
+
+<div class="photo-container">
+
+<img id="memoryPhoto" src="memory1.jpeg" alt="Memory">
+
+</div>
+
+<a href="page5.html" class="next-btn" id="nextBtn">
+Continue ❤️
+</a>
+
+<audio id="music" loop>
+
+<source src="memory.mp3" type="audio/mpeg">
+
+</audio>
+
+<script>
+
+const photo = document.getElementById("memoryPhoto");
+
+const nextBtn = document.getElementById("nextBtn");
+
+const music = document.getElementById("music");
+
+let current = 1;
+
+document.body.addEventListener("click", () => {
+
+music.volume = 0.3;
+
+music.play();
+
+}, { once: true });
+
+nextBtn.style.display = "none";
+
+const interval = setInterval(() => {
+
+current++;
+
+if(current <= 42){
+
+photo.style.opacity = "0";
+
+setTimeout(() => {
+
+photo.src = `memory${current}.jpeg`;
+
+photo.style.opacity = "1";
+
+},300);
+
+}else{
+
+clearInterval(interval);
+
+setTimeout(()=>{
+
+nextBtn.style.display="block";
+
+},3000);
+
+}
+
+},3000);
+
+nextBtn.onclick = function(){
+
+music.pause();
+
+music.currentTime = 0;
+
+};
+
+</script>
+
+</body>
+
+</html>

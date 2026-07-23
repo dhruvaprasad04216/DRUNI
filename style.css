@@ -1,0 +1,963 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+/* ---------- PAGE 1 ---------- */
+
+.page1{
+    background-image:url("milky way galaxy.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+/* ---------- PAGE 2 ---------- */
+
+.page2{
+    background-image:url("galaxy2.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.container,
+.welcome-page{
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+    text-align: center;
+    z-index: 10;
+}
+
+h1{
+    color:white;
+    font-size:clamp(30px, 5vw, 50px);
+    margin-bottom:25px;
+    text-shadow:0 0 20px rgba(255,255,255,.5);
+}.message{
+    color:white;
+    font-size:clamp(16px, 2vw, 22px);
+    line-height:1.8;
+    white-space:pre-line;
+
+    text-shadow:
+        -2px -2px 0 #000,
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000;
+}
+#typing{
+    color:#FFD700;
+    font-size:23px;
+    line-height:1.8;
+    white-space:pre-line;
+
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000,
+         0 0 10px rgba(255,215,0,0.8),
+         0 0 20px rgba(255,215,0,0.5);
+}
+
+.btn,
+.next-btn{
+    display:inline-block;
+    margin-top:40px;
+    padding:16px 38px;
+    border-radius:50px;
+    text-decoration:none;
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+
+    background:linear-gradient(45deg,#ff4b91,#ff8c42);
+
+    box-shadow:0 0 20px rgba(255,105,180,.6);
+
+    transition:.3s;
+}
+
+.btn:hover,
+.next-btn:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 35px rgba(255,105,180,.9);
+}
+
+#nextBtn{
+    opacity:0;
+    transition:1.5s;
+}
+
+/* ---------- STARS ---------- */
+
+.stars{
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+
+    background-image:
+    radial-gradient(2px 2px at 20px 30px,#fff,transparent),
+    radial-gradient(2px 2px at 120px 180px,#fff,transparent),
+    radial-gradient(2px 2px at 250px 80px,#fff,transparent),
+    radial-gradient(2px 2px at 420px 250px,#fff,transparent),
+    radial-gradient(2px 2px at 620px 120px,#fff,transparent),
+    radial-gradient(2px 2px at 760px 330px,#fff,transparent),
+    radial-gradient(2px 2px at 900px 200px,#fff,transparent),
+    radial-gradient(2px 2px at 1050px 90px,#fff,transparent);
+
+    animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle{
+
+    from{
+        opacity:.4;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}.cursor{
+    display:inline-block;
+    color:#FFD700;
+    animation:blink 0.8s infinite;
+}
+
+@keyframes blink{
+
+    0%,50%{
+        opacity:1;
+    }
+
+    51%,100%{
+        opacity:0;
+    }
+
+}.cursor{
+    color:#FFD700;
+    font-weight:bold;
+    animation:blink 0.8s infinite;
+}
+
+@keyframes blink{
+    0%,50%{
+        opacity:1;
+    }
+    51%,100%{
+        opacity:0;
+    }
+} .page2 .welcome-page a{
+    display:inline-block;
+
+    margin-top:30px;
+
+    padding:14px 35px;
+
+    background:#d4af37;
+
+    color:white !important;
+
+    text-decoration:none !important;
+
+    border-radius:30px;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    box-shadow:0 0 20px #d4af37;
+
+    transition:0.3s;
+}
+
+
+.page2 .welcome-page a:hover{
+
+    transform:scale(1.05);
+
+}
+/* ---------- MOBILE ---------- */
+
+@media (max-width:480px){
+
+body{
+    overflow:hidden;
+}
+
+.container,
+.welcome-page{
+    width:90%;
+}
+
+h1{
+    font-size:34px;
+    margin-bottom:15px;
+}
+
+.message,
+#typing{
+    font-size:17px;
+    line-height:1.5;
+}
+
+.btn,
+.next-btn{
+    margin-top:20px;
+    padding:14px 26px;
+    font-size:16px;
+}
+
+}
+/* =====================================================
+                PAGE 5 - BIRTHDAY MOVIE
+===================================================== */
+
+.movie-page{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100vh;
+    background:#000;
+    overflow:hidden;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Countdown */
+
+#countdown{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+}
+
+#countNumber{
+    color:#ffffff;
+    font-size:9rem;
+    animation:zoom 1s ease;
+}
+
+/* Happy Birthday Screen */
+
+#birthdayScreen{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#000;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    z-index:999;
+}
+
+#birthdayScreen h1{
+    color:white;
+    font-size:2.4rem;
+    margin-bottom:15px;
+}
+
+#birthdayScreen h2{
+    color:#ff5a7a;
+    font-size:2rem;
+}
+
+/* Videos */
+
+#video1,
+#video2,
+#video3,
+#video4{
+
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    object-fit:cover;
+    background:black;
+    display:none;
+    z-index:5;
+
+}
+
+/* Ending */
+
+#endingScreen{
+
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:black;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:30px;
+    z-index:20;
+
+}
+
+#endingScreen h2{
+
+    color:white;
+    font-size:28px;
+    margin-bottom:15px;
+
+}
+
+#endingScreen p{
+
+    color:#cccccc;
+    font-size:18px;
+    margin-bottom:40px;
+
+}
+
+#endingScreen button{
+
+    padding:15px 45px;
+    border:none;
+    border-radius:50px;
+    background:#ff4d6d;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+
+}
+
+@keyframes zoom{
+
+    0%{
+
+        transform:scale(.2);
+        opacity:0;
+
+    }
+
+    100%{
+
+        transform:scale(1);
+        opacity:1;
+
+    }
+
+}
+/* ==========================================
+              PAGE 6 - YOUR VOICE
+========================================== */
+
+.voice-page{
+    position:relative;
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial, Helvetica, sans-serif;
+    color:white;
+}
+
+.voice-page::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+    url("ourphoto.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    filter:blur(8px);
+    transform:scale(1.08);
+
+    z-index:-2;
+}
+
+.voice-page::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:rgba(0,0,0,.25);
+
+    z-index:-1;
+}
+
+/* Heart */
+
+#heart{
+    font-size:90px;
+    margin-bottom:35px;
+    filter:drop-shadow(0 0 25px #ff4d6d);
+}
+
+.beat{
+    animation:beat .9s infinite;
+}
+
+@keyframes beat{
+
+0%{transform:scale(1);}
+25%{transform:scale(1.12);}
+50%{transform:scale(.98);}
+75%{transform:scale(1.15);}
+100%{transform:scale(1);}
+
+}
+
+/* Play Button */
+
+#playBtn{
+
+    padding:15px 45px;
+    border:none;
+    border-radius:50px;
+    background:#ff4d6d;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+#playBtn:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* Message */
+
+#messageBox{
+
+    position:fixed;
+    bottom:120px;
+    width:100%;
+    text-align:center;
+    display:none;
+
+}
+
+#messageText{
+
+    font-size:22px;
+    padding:0 25px;
+    animation:fade 1s;
+
+}
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* Final */
+
+#finalMessage{
+
+    position:fixed;
+    inset:0;
+    background:black;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:25px;
+
+}
+
+#finalMessage h2{
+
+    font-size:32px;
+    margin-bottom:15px;
+
+}
+
+#finalMessage p{
+
+    color:#ddd;
+    font-size:20px;
+    margin-bottom:40px;
+
+}
+
+#finalMessage button{
+
+    padding:15px 45px;
+    border:none;
+    border-radius:50px;
+    background:#ff4d6d;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+
+}
+#voiceIntro{
+    transition:opacity .8s ease;
+}
+
+#finalMessage{
+    opacity:0;
+    transition:opacity 1.5s ease;
+}
+/*==================================================
+                PAGE 7
+==================================================*/
+
+.final-page{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:url("night_sky.jpg") center center/cover no-repeat fixed;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+.final-page::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.35);
+    z-index:0;
+}
+
+/*==============================
+        STARS
+==============================*/
+
+#stars{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    z-index:1;
+}
+
+.star{
+    position:absolute;
+    border-radius:50%;
+    background:white;
+
+    box-shadow:
+    0 0 6px white,
+    0 0 12px white,
+    0 0 20px white,
+    0 0 35px white;
+
+    animation:twinkle ease-in-out infinite;
+}
+
+@keyframes twinkle{
+
+0%{
+opacity:.15;
+transform:scale(.7);
+}
+
+50%{
+opacity:1;
+transform:scale(1.45);
+}
+
+100%{
+opacity:.15;
+transform:scale(.7);
+}
+
+}
+
+/*==============================
+        FIREWORKS
+==============================*/
+
+#fireworks{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    z-index:2;
+}
+
+.firework{
+    position:absolute;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:white;
+
+    box-shadow:
+    0 0 10px white,
+    0 0 20px white,
+    0 0 40px white;
+
+    animation:explode 1.8s linear forwards;
+}
+
+@keyframes explode{
+
+0%{
+transform:scale(.2);
+opacity:1;
+}
+
+70%{
+transform:scale(8);
+opacity:.9;
+}
+
+100%{
+transform:scale(13);
+opacity:0;
+}
+
+}
+
+/*==============================
+        CAKE
+==============================*/
+
+/* Centred explicitly with top/left/transform instead of relying on
+   flex-alignment of an absolutely-positioned child (unreliable on
+   some mobile browsers, incl. the Oppo Reno's stock webview). */
+#cakeSection{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    z-index:15;
+}
+
+#cakeContainer{
+    position:relative;
+    width:340px;
+    height:340px;
+    overflow:hidden;
+}
+
+#cakeLeft,
+#cakeRight{
+
+    position:absolute;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    box-shadow:0 0 35px rgba(255,255,255,.35);
+
+}
+
+#cakeLeft{
+    clip-path:inset(0 50% 0 0);
+}
+
+#cakeRight{
+    clip-path:inset(0 0 0 50%);
+}
+
+@keyframes fadeCake{
+
+from{
+opacity:0;
+transform:translate(-50%,-50%) scale(.85);
+}
+
+to{
+opacity:1;
+transform:translate(-50%,-50%) scale(1);
+}
+
+}
+
+#cutLine{
+
+    position:absolute;
+
+    top:0;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:2px;
+
+    height:0;
+
+    background:white;
+
+    box-shadow:0 0 10px white;
+
+    z-index:20;
+
+}
+
+#cakeText{
+    width:100%;
+    text-align:center;
+    color:white;
+    font-size:26px;
+    margin-top:20px;
+}
+
+#touchText{
+    width:100%;
+    text-align:center;
+    margin-top:12px;
+    color:#ffe7a5;
+    font-size:22px;
+}
+
+@keyframes blink{
+
+50%{
+opacity:.3;
+}
+
+}
+/*==============================
+        KNIFE
+==============================*/
+
+#knife{
+    position:absolute;
+    width:65px;
+    display:none;
+    left:75%;
+    bottom:-260px; /* starts further off-screen so the rise upward is visible and slow */
+    transform:rotate(20deg);
+    z-index:30;
+    pointer-events:none;
+    filter:drop-shadow(0 0 8px rgba(255,255,255,.55));
+}
+
+/*==============================
+        LETTER
+==============================*/
+
+#letter{
+
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+
+    width:90%;
+
+    max-width:500px;
+
+    text-align:center;
+
+    color:white;
+
+    display:none;
+
+    z-index:40;
+
+}
+
+#letter h2{
+
+    opacity:0;
+
+    margin:18px 0;
+
+    font-size:28px;
+
+    line-height:1.5;
+
+    text-shadow:
+    0 0 12px white;
+
+}
+
+#happy{
+
+    opacity:0;
+
+    margin-top:35px;
+
+    font-size:42px;
+
+    color:#FFD700;
+
+    text-shadow:
+    0 0 10px gold,
+    0 0 20px gold,
+    0 0 35px gold;
+
+}
+
+#signature{
+
+    opacity:0;
+
+    margin-top:40px;
+
+    font-size:30px;
+
+    color:#ffd7f3;
+
+    text-shadow:
+    0 0 12px pink;
+
+}
+
+/*==============================
+        FADE ANIMATION
+==============================*/
+
+.show{
+
+    animation:fadeIn 1.5s forwards;
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+/*==============================
+        MOBILE
+        (tuned for narrow phones like the Oppo Reno)
+==============================*/
+
+@media(max-width:480px){
+
+#cakeSection{
+
+    width:94%;
+    max-width:320px;
+
+}
+
+#cakeContainer{
+
+    width:260px;
+
+}
+
+#cakeText{
+
+    font-size:21px;
+    margin-top:18px;
+
+}
+
+#touchText{
+
+    font-size:20px;
+
+}
+
+#knife{
+
+    /* bigger and clearly visible on small screens */
+    width:88px;
+    filter:drop-shadow(0 0 10px rgba(255,255,255,.7));
+
+}
+
+#letter{
+
+    width:92%;
+
+}
+
+#letter h2{
+
+    font-size:19px;
+    line-height:1.45;
+    margin:14px 0;
+
+}
+
+#happy{
+
+    font-size:28px;
+    margin-top:26px;
+
+}
+
+#signature{
+
+    font-size:20px;
+    margin-top:28px;
+
+}
+
+}

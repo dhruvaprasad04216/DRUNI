@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Journey ❤️</title>
+
+<link rel="stylesheet" href="page3.css">
+
+</head>
+
+
+<body>
+
+
+<div class="sky"></div>
+<div class="stars"></div>
+
+
+
+<div class="slideshow">
+
+
+<div class="slide active">
+<img src="photo1.jpg">
+<p class="caption">The first time I saw you, I knew my world had changed.</p>
+</div>
+
+
+<div class="slide">
+<img src="photo2.jpg">
+<p class="caption">A simple message... and somehow it became everything.</p>
+</div>
+
+
+<div class="slide">
+<img src="photo3.jpg">
+<p class="caption">Every conversation with you felt like home.</p>
+</div>
+
+
+<div class="slide">
+<img src="photo4.jpg">
+<p class="caption">You turned ordinary days into memories I still smile about.</p>
+</div>
+
+
+<div class="slide">
+<img src="photo5.jpg">
+<p class="caption">Distance never mattered, because you were always close to my heart.</p>
+</div>
+
+
+<div class="slide">
+<img src="photo6.jpg">
+<p class="caption">With you, even silence felt like a conversation.</p>
+</div>
+
+
+<div class="slide">
+<img src="photo7.jpg">
+<p class="caption">You believed in me on days I didn't believe in myself.</p>
+</div>
+
+
+<div class="slide">
+<img src="photo8.jpg">
+<p class="caption">Every little fight only taught us how to hold on tighter.</p>
+</div>
+
+
+<div class="slide">
+<img src="photo9.jpg">
+<p class="caption">You became my favorite person to share every little thing with.</p>
+</div>
+
+
+<div class="slide">
+<img src="photo10.jpg">
+<p class="caption">And today, I just want the whole universe to know how much I love you.</p>
+</div>
+
+
+</div>
+
+
+
+<div class="dots" id="dots"></div>
+
+
+<a href="page4.html" class="next-btn" id="nextBtn" style="display:none;">
+    Continue Our Journey ❤️
+</a>
+
+
+
+
+<audio id="music" loop>
+
+<source src="song.mp3" type="audio/mpeg">
+
+</audio>
+
+
+
+
+
+<script>
+
+
+// CREATE DOTS
+
+const slides = document.querySelectorAll(".slide");
+
+const dotsContainer = document.getElementById("dots");
+
+let current = 0;
+
+
+
+slides.forEach((slide,index)=>{
+
+
+let dot=document.createElement("span");
+
+dot.classList.add("dot");
+
+
+if(index===0){
+
+dot.classList.add("active-dot");
+
+}
+
+
+dotsContainer.appendChild(dot);
+
+
+});
+
+
+
+const dots=document.querySelectorAll(".dot");
+
+
+
+
+
+// SLIDESHOW
+
+
+function showSlide(index){
+
+
+slides.forEach(slide=>{
+
+slide.classList.remove("active");
+
+});
+
+
+dots.forEach(dot=>{
+
+dot.classList.remove("active-dot");
+
+});
+
+
+slides[index].classList.add("active");
+
+dots[index].classList.add("active-dot");
+
+
+}
+
+
+
+setInterval(()=>{
+
+
+current++;
+
+
+if(current >= slides.length){
+
+current=0;
+
+}
+
+
+showSlide(current);
+
+
+},5000);
+
+
+// Show Continue button after 80 seconds
+setTimeout(() => {
+
+    document.getElementById("nextBtn").style.display = "block";
+
+}, 80000);
+
+
+
+// MUSIC
+
+
+const music=document.getElementById("music");
+
+
+document.body.addEventListener("click",()=>{
+
+
+music.volume=0.3;
+
+music.play();
+
+
+},{once:true});
+
+
+
+
+
+
+
+// STOP MUSIC WHEN CONTINUE
+
+
+document.getElementById("nextBtn").onclick=function(){
+
+
+music.pause();
+
+music.currentTime=0;
+
+
+};
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
