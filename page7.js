@@ -213,14 +213,15 @@ document.addEventListener("click", function () {
 
                 setTimeout(function () {
 
-                    happy.innerHTML = "🎂 Happy 18th Birthday<br>My Nidhima ❤️";
+                    happy.innerHTML = "🎂 Happy 18th Birthday<br>My Nidhima ❤️ Thiss iss the small Websitee I createdd Onlyy For You Withh all myy Ownn Wordss Hope You Likedd IT";
+                                          
                     happy.classList.add("show");
 
                 }, 10500);
 
                 setTimeout(function () {
 
-                    signature.innerHTML = "Forever Yours ❤️<br>Your Kanda";
+                    signature.innerHTML = "Forever Yoursss ❤️<br>___Your Kandaaa-DHRUVV";
                     signature.classList.add("show");
 
                 }, 13500);
