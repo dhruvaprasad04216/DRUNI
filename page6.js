@@ -13,7 +13,7 @@ const messages = [
 
 {
 time:8,
-text:"Your voice is my favorite melody.lovee youu kandaa ❤️"
+text:"Your voice is my favorite melodyyy.lovee youu kandaa ❤️"
 },
 
 {
@@ -33,7 +33,7 @@ text:"I could listen to you forever.lovee youu puttaaa ❤️"
 
 {
 time:40,
-text:"Thank you for being my happiest place.lovee youu darlingg ❤️"
+text:"Thank you for being my happiest place.lovee youu Chinnaaaa ❤️"
 },
 
 {
